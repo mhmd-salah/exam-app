@@ -1,0 +1,13 @@
+{
+  "common": {
+    "loading": "تحميل"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول"
+    },
+    "register": {
+      "title": "انشاء حساب"
+    }
+  }
+}

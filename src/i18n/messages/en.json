@@ -1,0 +1,13 @@
+{
+  "common": {
+    "loading": "loading"
+  },
+  "auth": {
+    "login": {
+      "title": "login"
+    },
+    "register": {
+      "title": "register"
+    }
+  }
+}
