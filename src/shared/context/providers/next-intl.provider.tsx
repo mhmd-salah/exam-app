@@ -7,11 +7,7 @@ interface INextIntlProvider_props {
 
 const NextIntlProvider = async ({ children }: INextIntlProvider_props) => {
   const messages = await getMessages();
-  return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
-    </NextIntlClientProvider>
-  );
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 };
 
 export default NextIntlProvider;

@@ -8,7 +8,6 @@ import { notFound } from "next/navigation";
 import getLocaleDir from "@/shared/lib/i18n/getLocaleDir";
 import { cn } from "@/shared/lib/utils";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,10 +28,7 @@ interface IRootLayout_props {
   params: Params;
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<IRootLayout_props>) {
+export default async function RootLayout({ children, params }: Readonly<IRootLayout_props>) {
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -50,10 +46,10 @@ export default async function RootLayout({
         "antialiased",
         geistSans.variable,
         geistMono.variable,
-        cairo.variable,
+        cairo.variable
       )}
     >
-      <body className="h-full ">
+      <body className="h-full">
         <App>{children}</App>
       </body>
     </html>

@@ -7,14 +7,6 @@ interface ListProps<T> {
   className?: string;
 }
 
-export default function List<T>({
-  items,
-  renderItem,
-  className,
-}: ListProps<T>) {
-  return (
-    <ul className={className}>
-      {items.map((item, index) => renderItem(item, index))}
-    </ul>
-  );
+export default function List<T>({ items, renderItem, className }: ListProps<T>) {
+  return <ul className={className}>{items.map((item, index) => renderItem(item, index))}</ul>;
 }
