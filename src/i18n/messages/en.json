@@ -3,8 +3,34 @@
     "loading": "loading"
   },
   "auth": {
-    "login": {
-      "title": "login"
+    "layout": {
+      "header": {
+        "colorTheme_Toggler": {
+          "toolTip": "Change color theme"
+        }
+      },
+      "authSideBar": {
+        "subtitle": "Empower your learning journey with our smart exam platform.",
+        "features": {
+          "tailoredDiplomas": {
+            "title": "Tailored Diplomas",
+            "description": "Choose from specialized tracks like Frontend, Backend, and Mobile Development."
+          },
+          "focusedExams": {
+            "title": "Focused Exams",
+            "description": "Access topic-specific tests including HTML, CSS, JavaScript, and more."
+          },
+          "smartMultiStepForms": {
+            "title": "Smart Multi-Step Forms",
+            "description": "Choose from specialized tracks like Frontend, Backend, and Mobile Development."
+          }
+        }
+      }
+    },
+
+    "signin": {
+      "heading": "Sign In",
+      "doNotHaveAccount": "Don't have an account?"
     },
     "register": {
       "title": "register"

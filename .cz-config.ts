@@ -9,15 +9,15 @@ module.exports = {
     { value: "test", name: "test:     Tests" },
     { value: "chore", name: "chore:    Maintenance" },
     { value: "perf", name: "perf:     Performance improvement" },
-    { value: "build", name: "build:    Build/dependencies" }
+    { value: "build", name: "build:    Build/dependencies" },
   ],
 
   messages: {
     type: "Select the type of change:",
     subject: "Write a short description:",
-    scope: "What is the scope? (optional):"
+    scope: "What is the scope? (optional):",
   },
 
   allowCustomScopes: true,
-  allowBreakingChanges: ["feat", "fix", "refactor"]
+  allowBreakingChanges: ["feat", "fix", "refactor"],
 };
