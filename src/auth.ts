@@ -25,67 +25,28 @@ export const authOptions: NextAuthOptions = {
         password: {},
       },
 
-      // async authorize(credentials) {
-      //   const result = loginSchema.safeParse({
-      //     username: credentials?.username,
-      //     password: credentials?.password,
-      //   });
-
-      //   if (!result.success) {
-      //     throw new Error("Invalid username or password");
-      //   }
-
-      //   const data = await login(result.data);
-
-      //   if (!data?.status || !data.payload) {
-      //     throw new Error(data?.message || "Login failed");
-      //   }
-
-      //   return {
-      //     id: data.payload.user.id,
-      //     name: data.payload.user.username,
-      //     user: data.payload.user,
-      //     token: data.payload.token,
-      //   };
-      // },
-
       async authorize(credentials) {
-        console.log("1️⃣ credentials:", credentials);
-
         const result = loginSchema.safeParse({
           username: credentials?.username,
           password: credentials?.password,
         });
 
-        console.log("2️⃣ validation:", result);
-
         if (!result.success) {
-          console.log("❌ ZOD ERROR:", result.error);
           throw new Error("Invalid username or password");
         }
 
-        try {
-          const data = await login(result.data);
+        const data = await login(result.data);
 
-          console.log("3️⃣ API DATA:", data);
-
-          if (!data?.status || !data.payload) {
-            console.log("❌ API LOGIN FAILED:", data);
-            throw new Error(data?.message || "Login failed");
-          }
-
-          console.log("4️⃣ LOGIN SUCCESS");
-
-          return {
-            id: data.payload.user.id,
-            name: data.payload.user.username,
-            user: data.payload.user,
-            token: data.payload.token,
-          };
-        } catch (error) {
-          console.log("🔥 AUTHORIZE ERROR:", error);
-          throw error;
+        if (!data?.status || !data.payload) {
+          throw new Error(data?.message || "Login failed");
         }
+
+        return {
+          id: data.payload.user.id,
+          name: data.payload.user.username,
+          user: data.payload.user,
+          token: data.payload.token,
+        };
       },
     }),
   ],
