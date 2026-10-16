@@ -1,9 +1,8 @@
 import RegisterFlow from "@/features/auth/components/register/registerFlow";
-import React from "react";
 
 const Signup = () => {
   return (
-    <div>
+    <div >
       <RegisterFlow />
     </div>
   );
