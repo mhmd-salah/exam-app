@@ -2,7 +2,7 @@ import RegisterFlow from "@/features/auth/components/register/registerFlow";
 
 const Signup = () => {
   return (
-    <div >
+    <div>
       <RegisterFlow />
     </div>
   );

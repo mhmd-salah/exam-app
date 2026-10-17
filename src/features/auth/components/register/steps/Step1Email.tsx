@@ -14,7 +14,7 @@ interface IProps {
 const Step1Email = ({ registerField, error, loading, onNext }: IProps) => {
   return (
     <div className="w-full">
-      <div className="space-y-4 font-mono ">
+      <div className="space-y-4 font-mono">
         <Label className="text-base">Email</Label>
         <Input
           type="email"
@@ -26,7 +26,7 @@ const Step1Email = ({ registerField, error, loading, onNext }: IProps) => {
       </div>
       <Button
         type="button"
-        className="mt-5 w-full bg-blue-600 py-2 font-mono "
+        className="mt-5 w-full bg-blue-600 py-2 font-mono"
         disabled={loading}
         onClick={onNext}
       >

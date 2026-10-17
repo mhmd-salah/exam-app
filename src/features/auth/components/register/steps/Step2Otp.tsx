@@ -1,4 +1,4 @@
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/shared/components/ui/input-otp";
 import { TRegisterFormData } from "@/features/auth/schemas/register.schema";
 import { Label } from "@/shared/components/ui/label";
 import { Button } from "@base-ui/react/button";
@@ -22,7 +22,9 @@ const Step2Otp = ({ registerField, error, loading, control, onNext }: IProps) =>
         render={({ field, fieldState }) => (
           <div>
             <Label className="mb-2 text-[1.4rem] font-bold text-blue-600">Verify OTP</Label>
-            <p className="text-sm mb-2 text-gray-500">Please enter the 6-digits code we have sent to:</p>
+            <p className="mb-2 text-sm text-gray-500">
+              Please enter the 6-digits code we have sent to:
+            </p>
             <p></p>
             <InputOTP maxLength={6} value={field.value} onChange={field.onChange}>
               <InputOTPGroup className="space-x-4">
