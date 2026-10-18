@@ -5,7 +5,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/shared/components/ui/dropdown-menu";
 import { LogOut, MoreVertical, User, LayoutDashboard } from "lucide-react";
@@ -27,8 +26,8 @@ const UserDropdown = () => {
             />
           </div>
           <div className="flex flex-col text-left font-mono">
-            <span className="mb-0.5 text-sm font-semibold text-blue-600">First name</span>
-            <span className="text-xs font-semibold text-gray-400">email@gmail.com</span>
+            <span className="mb-0.5 text-sm font-semibold text-blue-600">Mohamed salah</span>
+            <span className="text-xs font-semibold text-gray-400">dev.mhmdsalah@gmail.com</span>
           </div>
           <MoreVertical size={18} className="text-gray-400" />
         </div>

@@ -1,5 +1,5 @@
-import Sidebar from "@/features/dashboard/components/Sidebar";
-import DashboardBreadCrumb from "./../../../features/dashboard/components/DashboardBreadcrumb";
+import Sidebar from "@/features/dashboard/layout/components/Sidebar";
+import DashboardBreadCrumb from "@/features/dashboard/layout/components/DashboardBreadcrumb";
 
 interface IProps {
   children: React.ReactNode;
@@ -10,13 +10,11 @@ export default function DiplomasLayout({ children }: IProps) {
     <div className="mint-h-screen flex bg-gray-50">
       <Sidebar />
 
-      <main className="flex-1 ">
-        <div className="px-2 py-2">
-          <DashboardBreadCrumb/>
+      <main className="flex-1">
+        <div className="bg-white p-2">
+          <DashboardBreadCrumb />
         </div>
-        <div className="overflow-y-auto ">
-        {children}
-        </div>
+        <div className="p-5">{children}</div>
       </main>
     </div>
   );
