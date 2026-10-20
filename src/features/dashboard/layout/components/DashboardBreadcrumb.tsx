@@ -29,7 +29,7 @@ const DashboardBreadCrumb = () => {
           const href = "/" + segments.slice(0, index + 1).join("/");
           const isLast = index === segments.length - 1;
           const label = breadcrumbLabels[segment] ?? segment;
-
+          console.log(href, "-------");
           return (
             <React.Fragment key={href}>
               {index > 0 && <BreadcrumbSeparator className="text-gray-400" />}
@@ -37,7 +37,7 @@ const DashboardBreadCrumb = () => {
               <BreadcrumbItem>
                 {isLast ? (
                   <BreadcrumbPage className="text-xs text-gray-400 capitalize">
-                    {label}
+                    {label.split("-").join(" ")}
                   </BreadcrumbPage>
                 ) : (
                   <Link href={href} className="text-xs text-gray-400 capitalize">

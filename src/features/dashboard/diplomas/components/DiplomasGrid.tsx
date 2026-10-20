@@ -20,7 +20,10 @@ export default function DiplomasGrid() {
     <div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {allDiplomas.map((diploma) => (
-          <Link href={`/diplomas/${diploma.id.split("-")[0]}`} key={diploma.id}>
+          <Link
+            href={`/diplomas/${diploma.title.trim().split(" ").join("-").toLowerCase()}`}
+            key={diploma.id}
+          >
             <DiplomaCard diploma={diploma} />
           </Link>
         ))}

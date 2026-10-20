@@ -8,6 +8,7 @@ import UserDropdown from "./UserDropdown";
 
 const Sidebar = () => {
   const pathname = usePathname();
+  console.log(pathname);
   return (
     <aside className="sticky top-0 flex h-screen w-64 flex-col justify-between border border-gray-100 bg-blue-50 p-4">
       <div className="py-4">
@@ -22,10 +23,10 @@ const Sidebar = () => {
           </span>
         </div>
         {/* Links */}
-        <nav className="space-y-3 py-8 font-mono">
+        <nav className="space-y-3 py-8 font-mono *:transition-all *:duration-100">
           <Link
             href="/diplomas"
-            className={`flex gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname === "/diplomas" ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
+            className={`flex gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname.startsWith("/diplomas") ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
           >
             <GraduationCap strokeWidth={1} />
             Diplomas
@@ -33,7 +34,7 @@ const Sidebar = () => {
 
           <Link
             href="/settings"
-            className={`flex gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname === "/settings" ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
+            className={`flex gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname.includes("/settings") ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
           >
             <Settings strokeWidth={1} />
             Account Settings

@@ -7,7 +7,7 @@ interface IProps {
 
 export default function DiplomaCard({ diploma }: IProps) {
   return (
-    <div className="relative h-65 scale-3d overflow-hidden rounded-xl border border-gray-100 bg-gray-900 shadow-md transition-all duration-300 hover:shadow-2xl">
+    <div className="relative h-65 scale-3d overflow-hidden rounded-xl border border-gray-100 bg-gray-900 shadow-md transition-all duration-300 hover:shadow-lg">
       {diploma.image ? (
         <Image
           src={diploma.image}
