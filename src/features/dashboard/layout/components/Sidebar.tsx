@@ -26,7 +26,7 @@ const Sidebar = () => {
         <nav className="space-y-3 py-8 font-mono *:transition-all *:duration-100">
           <Link
             href="/diplomas"
-            className={`flex gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname.startsWith("/diplomas") ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
+            className={`flex items-center gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname.startsWith("/diplomas") ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
           >
             <GraduationCap strokeWidth={1} />
             Diplomas
@@ -34,7 +34,7 @@ const Sidebar = () => {
 
           <Link
             href="/settings"
-            className={`flex gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname.includes("/settings") ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
+            className={`flex items-center gap-2 border border-blue-50 px-3 py-2 text-sm ${pathname.includes("/settings") ? "border border-blue-600 bg-blue-100 text-blue-600" : ""}`}
           >
             <Settings strokeWidth={1} />
             Account Settings
