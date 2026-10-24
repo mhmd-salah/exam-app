@@ -28,6 +28,12 @@ export default function DiplomasGrid() {
           </Link>
         ))}
       </div>
+      <div onClick={()=> fetchNextPage()} className=" cursor-pointer text-sm text-center py-3 mt-5 text-gray-500 bg-white font-mono">
+        Click To More
+      </div>
+      {isFetchingNextPage? <p>
+        Loading more diplomas
+      </p> :""}
     </div>
   );
 }
