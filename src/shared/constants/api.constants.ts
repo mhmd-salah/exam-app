@@ -10,3 +10,11 @@ export const HEADERS = {
     Authorization: `Bearer ${token}`,
   }),
 };
+
+export function HeadersApi({ token }: { token?: string }) {
+  if (token) {
+    return { ...HEADERS, ...HEADERS.authorization(token) };
+  } else {
+    return HEADERS.jsonBody;
+  }
+}

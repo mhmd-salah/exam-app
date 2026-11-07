@@ -20,20 +20,19 @@ export default function DiplomasGrid() {
     <div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {allDiplomas.map((diploma) => (
-          <Link
-            href={`/diplomas/${diploma.title.trim().split(" ").join("-").toLowerCase()}`}
-            key={diploma.id}
-          >
+          <Link href={`/diplomas/${diploma.id}`} key={diploma.id}>
             <DiplomaCard diploma={diploma} />
+            {diploma.id}
           </Link>
         ))}
       </div>
-      <div onClick={()=> fetchNextPage()} className=" cursor-pointer text-sm text-center py-3 mt-5 text-gray-500 bg-white font-mono">
+      <div
+        onClick={() => void fetchNextPage()}
+        className="mt-5 cursor-pointer bg-white py-3 text-center font-mono text-sm text-gray-500"
+      >
         Click To More
       </div>
-      {isFetchingNextPage? <p>
-        Loading more diplomas
-      </p> :""}
+      {isFetchingNextPage ? <p>Loading more diplomas</p> : ""}
     </div>
   );
 }

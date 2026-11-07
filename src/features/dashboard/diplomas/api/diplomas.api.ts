@@ -1,5 +1,5 @@
 import { getSession } from "next-auth/react";
-import { API_BASE } from "@/shared/constants/api.constants";
+import { API_BASE, HEADERS } from "@/shared/constants/api.constants";
 
 interface IProps {
   pageParam: number;
@@ -14,7 +14,7 @@ export async function fetchDiplomas({ pageParam = 1 }: IProps) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      ...(token && { Authorization: `Bearer ${token}` }),
+      ...(token && HEADERS.authorization(token)),
     },
   });
 
