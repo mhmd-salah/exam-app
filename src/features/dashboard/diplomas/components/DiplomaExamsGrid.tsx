@@ -1,9 +1,16 @@
 "use client";
+import List from "@/shared/components/List";
 import useGetDiplomaExams from "../hooks/useGetDiplomaExams";
 import DiplomaExamCard from "./DiplomaExamCard";
+import { Link, usePathname } from "@/i18n/navigation";
 
-const DiplomaExamsGrid = () => {
-  const { data, isLoading } = useGetDiplomaExams({ id: "07c143c9-e5d2-4301-8a34-5c76da61ec09" });
+interface IProps {
+  id: string;
+}
+
+const DiplomaExamsGrid = ({ id }: IProps) => {
+  const { data, isLoading } = useGetDiplomaExams({ id });
+  const pathname = usePathname();
 
   if (isLoading) {
     return <p>Loading</p>;
@@ -12,13 +19,14 @@ const DiplomaExamsGrid = () => {
   if (data?.status) {
     const diploma = data.payload.diploma;
     return (
-      <div>
-        <h1>{diploma.title}</h1>
-
-        {diploma.exams.map((exam) => (
-          <DiplomaExamCard key={exam.id} exam={exam} />
-        ))}
-      </div>
+      <List
+        items={diploma.exams}
+        renderItem={(exam) => (
+          <Link href={"/exams/" + exam.id} key={exam.id}>
+            <DiplomaExamCard exam={exam} />
+          </Link>
+        )}
+      />
     );
   }
 };

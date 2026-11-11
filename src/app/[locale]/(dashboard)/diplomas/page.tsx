@@ -5,7 +5,9 @@ import { GraduationCap } from "lucide-react";
 const Diplomas = () => {
   return (
     <div>
-      <Heading><GraduationCap size={30}/></Heading>
+      <Heading>
+        <GraduationCap size={30} />
+      </Heading>
       <DiplomasGrid />
     </div>
   );

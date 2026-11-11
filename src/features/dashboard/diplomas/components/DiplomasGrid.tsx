@@ -22,7 +22,6 @@ export default function DiplomasGrid() {
         {allDiplomas.map((diploma) => (
           <Link href={`/diplomas/${diploma.id}`} key={diploma.id}>
             <DiplomaCard diploma={diploma} />
-            {diploma.id}
           </Link>
         ))}
       </div>

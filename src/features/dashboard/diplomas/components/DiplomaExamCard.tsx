@@ -9,8 +9,8 @@ interface IProps {
 const DiplomaExamCard = ({ exam }: IProps) => {
   return (
     <div className="mb-3 flex gap-2 bg-slate-100 p-3 transition-all hover:bg-blue-50">
-      <div className="border border-blue-200 bg-blue-100 p-2">
-        <Image src={exam.image} width={75} height={75} alt="logo" />
+      <div className="flex h-27 border border-blue-200 bg-blue-100 p-2">
+        <Image src={exam.image} width={85} height={85} alt="logo" />
       </div>
 
       <div className="flex-1 font-mono">

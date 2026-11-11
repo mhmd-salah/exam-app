@@ -14,8 +14,8 @@ const DiplomaExam = async ({ params }: IProps) => {
       <Heading>
         <BookMarkedIcon />
       </Heading>
-      <DiplomaExamsGrid />
-      {id}
+      <DiplomaExamsGrid id={id} />
+      <div className="text-center text-sm text-gray-700">list of end</div>
     </div>
   );
 };

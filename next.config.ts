@@ -7,11 +7,11 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-      hostname: 'exam-app.elevate-bootcamp.cloud',
-      protocol:"https",
-      }
-    ]
-  }
+        hostname: "exam-app.elevate-bootcamp.cloud",
+        protocol: "https",
+      },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();
