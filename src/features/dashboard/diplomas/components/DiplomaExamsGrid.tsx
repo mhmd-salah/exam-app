@@ -5,11 +5,11 @@ import DiplomaExamCard from "./DiplomaExamCard";
 import { Link, usePathname } from "@/i18n/navigation";
 
 interface IProps {
-  id: string;
+  diplomaId: string;
 }
 
-const DiplomaExamsGrid = ({ id }: IProps) => {
-  const { data, isLoading } = useGetDiplomaExams({ id });
+const DiplomaExamsGrid = ({ diplomaId }: IProps) => {
+  const { data, isLoading } = useGetDiplomaExams({ diplomaId });
   const pathname = usePathname();
 
   if (isLoading) {

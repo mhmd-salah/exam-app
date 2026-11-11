@@ -2,11 +2,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchDiplomaExamsById } from "../api/diplomaExams.api";
 
-export default function useGetDiplomaExams({ id }: { id: string }) {
+export default function useGetDiplomaExams({ diplomaId }: { diplomaId: string }) {
   return useQuery({
-    queryKey: ["diplomaExams", id],
+    queryKey: ["diplomaExams", diplomaId],
     queryFn: async () => {
-      return fetchDiplomaExamsById({ id });
+      return fetchDiplomaExamsById({ diplomaId });
     },
   });
 }

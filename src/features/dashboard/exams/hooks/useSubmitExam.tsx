@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { ISubmitExamPayload, submitExam } from "../api/submitExams.api";
 
-export default function useSubmitExam(id: string) {
+export default function useSubmitExam(examId: string) {
   return useMutation({
     mutationFn: (payload: ISubmitExamPayload) => submitExam(payload),
     onSuccess: (data) => {

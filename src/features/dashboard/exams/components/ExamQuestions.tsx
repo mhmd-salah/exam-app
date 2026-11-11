@@ -8,13 +8,13 @@ import { useState } from "react";
 import useSubmitExam from "../hooks/useSubmitExam";
 
 interface IProps {
-  id: string;
+  examId: string;
 }
 
-const ExamQuestions = ({ id }: IProps) => {
+const ExamQuestions = ({ examId }: IProps) => {
   // Hooks
-  const { data, isLoading, isError } = useGetQuestions(id);
-  const { mutate: submitExamMutate, isPending } = useSubmitExam(id);
+  const { data, isLoading, isError } = useGetQuestions(examId);
+  const { mutate: submitExamMutate, isPending } = useSubmitExam(examId);
 
   // Stats
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,7 +47,7 @@ const ExamQuestions = ({ id }: IProps) => {
     }));
 
     const payloadBody = {
-      examId: id,
+      examId,
       answers: formattedAnswers,
       startedAt: startedAt,
     };

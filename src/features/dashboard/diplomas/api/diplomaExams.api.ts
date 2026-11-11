@@ -4,16 +4,16 @@ import { getSession } from "next-auth/react";
 import { TDiplomaExamsPayload } from "../types/diplomaExams.types";
 
 interface IProps {
-  id: string;
+  diplomaId: string;
 }
 
 export async function fetchDiplomaExamsById({
-  id,
+  diplomaId,
 }: IProps): Promise<IApiResponse<TDiplomaExamsPayload>> {
   const session = await getSession();
   const token = session?.token;
 
-  const res = await fetch(`${API_BASE}/diplomas/${id}`, {
+  const res = await fetch(`${API_BASE}/diplomas/${diplomaId}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

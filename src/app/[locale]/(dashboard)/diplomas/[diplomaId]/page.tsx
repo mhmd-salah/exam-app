@@ -4,17 +4,17 @@ import { BookMarkedIcon } from "lucide-react";
 import React from "react";
 
 interface IProps {
-  params: Promise<{ id: string }>;
+  params: Promise<{ diplomaId: string }>;
 }
 
 const DiplomaExam = async ({ params }: IProps) => {
-  const { id } = await params;
+  const { diplomaId } = await params;
   return (
     <div>
       <Heading>
         <BookMarkedIcon />
       </Heading>
-      <DiplomaExamsGrid id={id} />
+      <DiplomaExamsGrid diplomaId={diplomaId} />
       <div className="text-center text-sm text-gray-700">list of end</div>
     </div>
   );

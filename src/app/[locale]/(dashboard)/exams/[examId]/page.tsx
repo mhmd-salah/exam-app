@@ -3,18 +3,18 @@ import Heading from "@/features/dashboard/layout/components/Heading";
 import { CircleQuestionMark } from "lucide-react";
 
 interface IProps {
-  params: Promise<{ id: string }>;
+  params: Promise<{ examId: string }>;
 }
 
 const ExamId = async ({ params }: IProps) => {
-  const { id } = await params;
+  const { examId } = await params;
 
   return (
     <div>
       <Heading>
         <CircleQuestionMark />
       </Heading>
-      <ExamQuestions id={id} />
+      <ExamQuestions examId={examId} />
     </div>
   );
 };
